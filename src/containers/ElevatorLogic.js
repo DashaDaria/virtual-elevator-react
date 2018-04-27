@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
+import background from '../background.png';
 import ElevatorKeypad from '../components/ElevatorKeypad';
 
 class ElevatorLogic extends Component {
@@ -13,12 +14,10 @@ class ElevatorLogic extends Component {
   render() {
     return (
       <div className="App">
-
-        <header className="App-header">
-          <h1 className="App-title">Welcome to the Smart Virtual Elevator</h1>
-        </header>
-
+      <body>
+        <h1>Welcome to the Smart Virtual Elevator</h1>
         <ElevatorKeypad currentFloor={this.state.currentFloor}/>
+      </body>
       </div>
     );
   }
