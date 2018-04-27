@@ -12,7 +12,6 @@ h1 {
   margin: 1.5% 0% 0% 3%;
 }
 
-
 .keypad-container {
   background: transparent;
   display: inline-block;
@@ -42,4 +41,30 @@ h1 {
 
 .keypad-container p {
   text-align: center;
+}
+
+.building-container {
+  background: transparent;
+  display: inline-block;
+  float: left;
+  height: 500px;
+  margin: 1% 2% 1% 1%;
+  width: 47%;
+}
+table {
+  padding: 0% 7% 0% 7%;
+  margin: 5% 40% 0%;
+  border: 2px solid #59056e;
+  border-spacing: 0px 5px;
+  background: #59056e;
+}
+
+td {
+  border: 1px solid black;
+  height: 35px;
+  width: 40px;
+  text-align: center;
+  background: white;
+  color: #59056e;
+  border-radius: 10%;
 }
