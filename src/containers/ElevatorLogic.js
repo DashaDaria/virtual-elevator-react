@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import background from '../background.png';
 import ElevatorKeypad from './ElevatorKeypad';
+import Elevator from '../components/Elevator';
 
 class ElevatorLogic extends Component {
   constructor(){
@@ -10,9 +11,11 @@ class ElevatorLogic extends Component {
       currentFloor: 1,
       requestedStops: []
     }
+
+    this.addFloorToRequestedStops = this.addFloorToRequestedStops.bind(this)
   }
 
-  addFloorToRequestedStops(){
+  addFloorToRequestedStops(floorNumber){
 
   }
 
@@ -26,6 +29,7 @@ class ElevatorLogic extends Component {
         requestedStops={this.state.requestedStops}
         addFloorToRequestedStops={this.state.addFloorToRequestedStops}
         />
+        <Elevator currentFloor={this.state.currentFloor} />
       </body>
       </div>
     );

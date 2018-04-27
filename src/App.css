@@ -9,10 +9,8 @@ body {
 h1 {
   text-align: left;
   color: white;
-  margin: 3%;
-  background: transparent;
+  margin: 1.5% 0% 0% 3%;
 }
-
 
 
 .keypad-container {
@@ -21,7 +19,7 @@ h1 {
   float: left;
   height: 500px;
   width: 200px;
-  margin: 5%;
+  margin: 6% 6% 6% 10%;
 }
 
 .keypad input {
@@ -30,16 +28,16 @@ h1 {
   height: 60px;
   margin: 12px;
   border-radius: 10%;
-  border: 2px solid #59056e;
-  color: #59056e;
-  background-color: #ffffff;
+  border: 2px solid white;
+  color: white;
+  background-color: transparent;
   outline: 0;
   transition: all 170ms ease-out;
 }
 
 .keypad input:hover, .keypad input.requested {
-  background-color: orange;
-  color: #59056e;
+  background-color: white;
+  color: #0d4995;
 }
 
 .keypad-container p {
