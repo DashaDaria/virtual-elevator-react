@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 import '../App.css';
 import background from '../background.png';
-import ElevatorKeypad from '../components/ElevatorKeypad';
+import ElevatorKeypad from './ElevatorKeypad';
 
 class ElevatorLogic extends Component {
   constructor(){
     super()
     this.state = {
-      currentFloor: 1
+      currentFloor: 1,
+      requestedStops: []
     }
+  }
+
+  addFloorToRequestedStops(){
+
   }
 
   render() {
@@ -16,7 +21,11 @@ class ElevatorLogic extends Component {
       <div className="App">
       <body>
         <h1>Welcome to the Smart Virtual Elevator</h1>
-        <ElevatorKeypad currentFloor={this.state.currentFloor}/>
+        <ElevatorKeypad
+        currentFloor={this.state.currentFloor}
+        requestedStops={this.state.requestedStops}
+        addFloorToRequestedStops={this.state.addFloorToRequestedStops}
+        />
       </body>
       </div>
     );
