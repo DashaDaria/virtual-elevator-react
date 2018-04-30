@@ -38,6 +38,9 @@ class ElevatorLogic extends Component {
     this.floorTravelTimer = setInterval(() => this.goToRequestedFloor(), 500)
   }
 
+  componentWillUnmount() {
+    clearInterval(this.floorTravelTimer);
+  }
 
   render() {
     return (
