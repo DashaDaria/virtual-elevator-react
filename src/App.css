@@ -64,11 +64,11 @@ td {
   height: 35px;
   width: 40px;
   text-align: center;
-  background: white;
+  background: transparent;
   color: #59056e;
   border-radius: 10%;
 }
 
 td.visited {
-  color: white;
+  background: white;
 }

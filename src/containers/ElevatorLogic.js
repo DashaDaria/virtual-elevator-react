@@ -13,26 +13,33 @@ class ElevatorLogic extends Component {
       doorOpen: false
     }
     this.addFloorToRequestedStops       = this.addFloorToRequestedStops.bind(this)
-    this.removeFloorFromRequestedStops  = this.removeFloorFromRequestedStops.bind(this)
     this.goToRequestedFloor             = this.goToRequestedFloor.bind(this)
+    this.stopAtFloor                    = this.stopAtFloor.bind(this)
   }
 
   addFloorToRequestedStops(floorNumber){
-    //
-  }
-
-  removeFloorFromRequestedStops(floorNumber){
-    if (floorNumber === requestedStops[0]){
-      let { requestedStops } = this.state
-      requestedStops.filter(requestedStops.splice(requestedStop[0], 1))
+    let { currentFloor, requestedStops } = this.state
+    if(floorNumber !== currentFloor){
+      requestedStops.push(floorNumber)
     }
-    return requestedStops
   }
 
   goToRequestedFloor(){
-
+    let { doorOpen, requestedStops, currentFloor } = this.state
+      if (currentFloor > requestedStops[0]) {
+        this.setState({ currentFloor: currentFloor - 1 })
+      } else if (currentFloor < requestedStops[0]) {
+        this.setState({ currentFloor: currentFloor + 1 })
+      } else if (currentFloor !== 1) {
+        this.addFloorToRequestedStops(1)
+      }
   }
 
+  stopAtFloor(){
+    let { requestedStops, currentFloor } = this.state
+    requestedStops.splice(requestedStops.indexOf(currentFloor), 1)
+    this.setState({ requestedStops })
+  }
 
   componentDidMount(){
     this.floorTravelTimer = setInterval(() => this.goToRequestedFloor(), 500)
@@ -49,7 +56,7 @@ class ElevatorLogic extends Component {
         <h1>Welcome to the Smart Virtual Elevator</h1>
         <ElevatorKeypad
         requestedStops={this.state.requestedStops}
-        addFloorToRequestedStops={this.state.addFloorToRequestedStops}
+        addFloorToRequestedStops={this.addFloorToRequestedStops}
         />
         <Elevator currentFloor={this.state.currentFloor} />
       </body>
