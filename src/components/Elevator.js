@@ -7,48 +7,49 @@ class Elevator extends Component {
     this.moveElevatorClass = this.moveElevatorClass.bind(this)
   }
 
- moveElevatorClass(currentFloor) {
+  moveElevatorClass(currentFloor) {
     return (this.props.currentFloor === currentFloor) ? 'visited' : ''
   }
 
-
-  render() {
-    return (
+  render(){
+    return(
       <div className="building-container">
-        <table>
+        <div className="building">
+          <table>
           <tbody>
             <tr>
-              <td className={this.moveElevatorClass(10)}>10</td>
+              <td className={ this.moveElevatorClass(10) }>10</td>
             </tr>
             <tr>
-              <td className={this.moveElevatorClass(9)}>9</td>
+              <td className={ this.moveElevatorClass(9) }>9</td>
             </tr>
             <tr>
-              <td className={this.moveElevatorClass(8)}>8</td>
+              <td className={ this.moveElevatorClass(8) }>8</td>
             </tr>
             <tr>
-              <td className={this.moveElevatorClass(7)}>7</td>
+              <td className={ this.moveElevatorClass(7) }>7</td>
             </tr>
             <tr>
-              <td className={this.moveElevatorClass(6)}>6</td>
+              <td className={ this.moveElevatorClass(6) }>6</td>
             </tr>
             <tr>
-              <td className={this.moveElevatorClass(5)}>5</td>
+              <td className={ this.moveElevatorClass(5) }>5</td>
             </tr>
             <tr>
-              <td className={this.moveElevatorClass(4)}>4</td>
+              <td className={ this.moveElevatorClass(4) }>4</td>
             </tr>
             <tr>
-              <td className={this.moveElevatorClass(3)}>3</td>
+              <td className={ this.moveElevatorClass(3) }>3</td>
             </tr>
             <tr>
-              <td className={this.moveElevatorClass(2)}>2</td>
+              <td className={ this.moveElevatorClass(2) }>2</td>
             </tr>
             <tr>
-              <td className={this.moveElevatorClass(1)}>1</td>
+              <td className={ this.moveElevatorClass(1) }>1</td>
             </tr>
-          </tbody>
-        </table>
+            </tbody>
+          </table>
+          </div>
       </div>
     )
   }
