@@ -11,13 +11,33 @@ class ElevatorLogic extends Component {
       currentFloor: 1,
       requestedStops: []
     }
-
-    this.addFloorToRequestedStops = this.addFloorToRequestedStops.bind(this)
+    this.addFloorToRequestedStops       = this.addFloorToRequestedStops.bind(this)
+    this.removeFloorFromRequestedStops  = this.removeFloorFromRequestedStops.bind(this)
+    this.goToRequestedFloor             = this.goToRequestedFloor.bind(this)
   }
 
   addFloorToRequestedStops(floorNumber){
+    //
+  }
+
+  removeFloorFromRequestedStops(floorNumber){
+    if (floorNumber === requestedStops[0]){
+      let { requestedStops } = this.state
+      requestedStops.filter(requestedStops.splice(requestedStop[0], 1))
+    }
+    return requestedStops
+  }
+
+  goToRequestedFloor(){
 
   }
+
+  componentDidMount(){
+    this.floorTravelTimer = setInterval(() => {
+      this.setState({ requestedStops })
+    }, 500)
+  }
+
 
   render() {
     return (
@@ -25,7 +45,6 @@ class ElevatorLogic extends Component {
       <body>
         <h1>Welcome to the Smart Virtual Elevator</h1>
         <ElevatorKeypad
-        currentFloor={this.state.currentFloor}
         requestedStops={this.state.requestedStops}
         addFloorToRequestedStops={this.state.addFloorToRequestedStops}
         />

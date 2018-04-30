@@ -54,7 +54,7 @@ h1 {
 table {
   padding: 0% 7% 0% 7%;
   margin: 5% 40% 0%;
-  border: 2px solid #59056e;
+  border: 2px solid white;
   border-spacing: 0px 5px;
   background: #59056e;
 }
@@ -67,4 +67,8 @@ td {
   background: white;
   color: #59056e;
   border-radius: 10%;
+}
+
+td.visited {
+  color: white;
 }

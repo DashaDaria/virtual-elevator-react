@@ -6,7 +6,7 @@ class ElevatorKeypad extends Component {
   constructor() {
     super()
     this.requestStopOnClick = this.requestStopOnClick.bind(this)
-    this.buttonClass        = this.buttonClass.bind(this)
+    this.keypadClass        = this.keypadClass.bind(this)
   }
 
   requestStopOnClick(event) {
@@ -14,7 +14,7 @@ class ElevatorKeypad extends Component {
     this.props.addFloorToRequestedStops(floorNumber)
   }
 
-  buttonClass(floorNumber) {
+  keypadClass(floorNumber) {
     let { requestedStops } = this.props
     return requestedStops.includes(floorNumber) ? 'requested' : ''
   }
@@ -24,16 +24,16 @@ class ElevatorKeypad extends Component {
       <div className="keypad-container">
         <p>Choose Your Floor</p>
         <div className="keypad">
-          <input type="button" className={ this.buttonClass(1) } onClick={this.requestStopOnClick} value="1" />
-          <input type="button" className={ this.buttonClass(2) } onClick={this.requestStopOnClick} value="2" />
-          <input type="button" className={ this.buttonClass(3) } onClick={this.requestStopOnClick} value="3" />
-          <input type="button" className={ this.buttonClass(4) } onClick={this.requestStopOnClick} value="4" />
-          <input type="button" className={ this.buttonClass(5) } onClick={this.requestStopOnClick} value="5" />
-          <input type="button" className={ this.buttonClass(6) } onClick={this.requestStopOnClick} value="6" />
-          <input type="button" className={ this.buttonClass(7) } onClick={this.requestStopOnClick} value="7" />
-          <input type="button" className={ this.buttonClass(8) } onClick={this.requestStopOnClick} value="8" />
-          <input type="button" className={ this.buttonClass(9) } onClick={this.requestStopOnClick} value="9" />
-          <input type="button" className={ this.buttonClass(10) } onClick={this.requestStopOnClick} value="10" />
+          <input type="button" className={ this.keypadClass(1) } onClick={this.requestStopOnClick} value="1" />
+          <input type="button" className={ this.keypadClass(2) } onClick={this.requestStopOnClick} value="2" />
+          <input type="button" className={ this.keypadClass(3) } onClick={this.requestStopOnClick} value="3" />
+          <input type="button" className={ this.keypadClass(4) } onClick={this.requestStopOnClick} value="4" />
+          <input type="button" className={ this.keypadClass(5) } onClick={this.requestStopOnClick} value="5" />
+          <input type="button" className={ this.keypadClass(6) } onClick={this.requestStopOnClick} value="6" />
+          <input type="button" className={ this.keypadClass(7) } onClick={this.requestStopOnClick} value="7" />
+          <input type="button" className={ this.keypadClass(8) } onClick={this.requestStopOnClick} value="8" />
+          <input type="button" className={ this.keypadClass(9) } onClick={this.requestStopOnClick} value="9" />
+          <input type="button" className={ this.keypadClass(10) } onClick={this.requestStopOnClick} value="10" />
       </div>
     </div>
     )

@@ -1,45 +1,57 @@
-import React from 'react';
+import React, { Component } from 'react';
+import '../App.css';
 
-const Elevator = ({ currentFloor }) => {
+class Elevator extends Component {
+  constructor(){
+    super()
+    this.moveElevatorClass = this.moveElevatorClass.bind(this)
+  }
 
-  return(
-    <div className="building-container">
+ moveElevatorClass(currentFloor) {
+    return (this.props.currentFloor === currentFloor) ? 'visited' : ''
+  }
+
+
+  render() {
+    return (
+      <div className="building-container">
         <table>
-        <tbody>
-          <tr>
-            <td>10</td>
-          </tr>
-          <tr>
-            <td>9</td>
-          </tr>
-          <tr>
-            <td>8</td>
-          </tr>
-          <tr>
-            <td >7</td>
-          </tr>
-          <tr>
-            <td>6</td>
-          </tr>
-          <tr>
-            <td>5</td>
-          </tr>
-          <tr>
-            <td>4</td>
-          </tr>
-          <tr>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td>2</td>
-          </tr>
-          <tr>
-            <td>1</td>
-          </tr>
+          <tbody>
+            <tr>
+              <td className={this.moveElevatorClass(10)}>10</td>
+            </tr>
+            <tr>
+              <td className={this.moveElevatorClass(9)}>9</td>
+            </tr>
+            <tr>
+              <td className={this.moveElevatorClass(8)}>8</td>
+            </tr>
+            <tr>
+              <td className={this.moveElevatorClass(7)}>7</td>
+            </tr>
+            <tr>
+              <td className={this.moveElevatorClass(6)}>6</td>
+            </tr>
+            <tr>
+              <td className={this.moveElevatorClass(5)}>5</td>
+            </tr>
+            <tr>
+              <td className={this.moveElevatorClass(4)}>4</td>
+            </tr>
+            <tr>
+              <td className={this.moveElevatorClass(3)}>3</td>
+            </tr>
+            <tr>
+              <td className={this.moveElevatorClass(2)}>2</td>
+            </tr>
+            <tr>
+              <td className={this.moveElevatorClass(1)}>1</td>
+            </tr>
           </tbody>
         </table>
-    </div>
-  )
+      </div>
+    )
+  }
 }
 
 export default Elevator;
