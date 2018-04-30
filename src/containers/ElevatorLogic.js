@@ -9,7 +9,8 @@ class ElevatorLogic extends Component {
     super()
     this.state = {
       currentFloor: 1,
-      requestedStops: []
+      requestedStops: [],
+      doorOpen: false
     }
     this.addFloorToRequestedStops       = this.addFloorToRequestedStops.bind(this)
     this.removeFloorFromRequestedStops  = this.removeFloorFromRequestedStops.bind(this)
@@ -32,10 +33,9 @@ class ElevatorLogic extends Component {
 
   }
 
+
   componentDidMount(){
-    this.floorTravelTimer = setInterval(() => {
-      this.setState({ requestedStops })
-    }, 500)
+    this.floorTravelTimer = setInterval(() => this.goToRequestedFloor(), 500)
   }
 
 
