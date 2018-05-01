@@ -1,9 +1,10 @@
 header {
-    text-align: center;
+    text-align: left;
     height: 50px;
-    padding: 2px 25px 1%;
+    padding: 2px 40px 1%;
     background: #0d4995;
     color: #fff;
+    text-transform: uppercase;
 }
 
 body {
@@ -50,9 +51,9 @@ span {
 table {
   padding-left: 10%;
   padding-right: 10%;
-  margin:auto;
+  margin-left: 4%;
   border: 2px solid white;
-  border-spacing: 30px 10px;
+  border-spacing: 55px 10px;
   background: transparent;
 }
 
@@ -121,5 +122,4 @@ p {
   text-align:center;
   vertical-align: middle;
   text-transform: uppercase;
-  margin-top: 2%;
 }

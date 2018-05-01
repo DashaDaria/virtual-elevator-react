@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../index.css';
+import '../styles/index.css';
 
 class Elevator extends Component {
   constructor(){

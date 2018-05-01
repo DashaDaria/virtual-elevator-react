@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import '../index.css';
 import ElevatorKeypad from './ElevatorKeypad';
 import Elevator from '../components/Elevator';
+import '../styles/index.css';
 
-class App extends Component {
+class ElevatorLogic extends Component {
   constructor(){
     super()
     this.state = {
@@ -23,7 +23,7 @@ class App extends Component {
       requestedStops.push(requestedFloor)
     } else if (!requestedStops.includes(requestedFloor)) {
       if (nextStop < currentFloor) {
-        // we're going down
+        // // we're going down
         let nextStops  = requestedStops.filter( stop => { return stop < currentFloor } )
         let laterStops = requestedStops.filter( stop => { return stop > currentFloor } )
         if (requestedFloor < currentFloor) {
@@ -99,17 +99,16 @@ class App extends Component {
           <Elevator currentFloor={this.state.currentFloor} />
           <div className="current-floor-container">
             <h3>The elevator is on floor: <br/><br/>
-                <span>{ this.state.currentFloor }</span> </h3>
+            <span>{ this.state.currentFloor }</span></h3>
           </div>
           <ElevatorKeypad
             requestedStops={this.state.requestedStops}
             addFloorToRequestedStops={this.addFloorToRequestedStops}
           />
-
         </div>
       </div>
     )
   }
 }
 
-export default App;
+export default ElevatorLogic;
