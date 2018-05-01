@@ -2,18 +2,11 @@
   color: white;
 }
 
-body {
-  background-image: url("background.png");
-}
-
-h1 {
+header {
+  background-color: #0d4995;
   text-align: left;
-  color: white;
-  margin: 1.5% 0% 0% 3%;
-}
-
-h2 {
-  
+  height: 50px;
+  padding: 20px;
 }
 
 .keypad-container {

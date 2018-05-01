@@ -3,7 +3,6 @@ import '../App.css';
 import ElevatorKeypad from './ElevatorKeypad';
 import Elevator from '../components/Elevator';
 
-
 class App extends Component {
   constructor(){
     super()
@@ -15,6 +14,41 @@ class App extends Component {
     this.addFloorToRequestedStops = this.addFloorToRequestedStops.bind(this)
     this.stopAtFloor              = this.stopAtFloor.bind(this)
     this.goToNextFloor            = this.goToNextFloor.bind(this)
+  }
+
+  addFloorToRequestedStops(requestedFloor) {
+    let { currentFloor, requestedStops } = this.state
+    let nextStop = requestedStops[0]
+    if (!nextStop) {
+      requestedStops.push(requestedFloor)
+    } else if (!requestedStops.includes(requestedFloor)) {
+      if (nextStop < currentFloor) {
+        // we're going down
+        let nextStops  = requestedStops.filter( stop => { return stop < currentFloor } )
+        let laterStops = requestedStops.filter( stop => { return stop > currentFloor } )
+        if (requestedFloor < currentFloor) {
+          nextStops.push(requestedFloor)
+        } else {
+          laterStops.push(requestedFloor)
+        }
+        nextStops.sort((a, b) => { return b - a })
+        laterStops.sort((a, b) => { return a - b })
+        requestedStops = nextStops.concat(laterStops)
+      } else {
+        // we're going up
+        let nextStops  = requestedStops.filter( stop => { return stop > currentFloor } )
+        let laterStops = requestedStops.filter( stop => { return stop < currentFloor } )
+        if (requestedFloor > currentFloor) {
+          nextStops.push(requestedFloor)
+        } else {
+          laterStops.push(requestedFloor)
+        }
+        nextStops.sort((a, b) => { return a - b })
+        laterStops.sort((a, b) => { return b - a })
+        requestedStops = nextStops.concat(laterStops)
+      }
+    }
+    this.setState({ requestedStops })
   }
 
   goToNextFloor() {
@@ -46,44 +80,6 @@ class App extends Component {
     this.setState({ requestedStops })
   }
 
-  addFloorToRequestedStops(requestedFloor) {
-    let { currentFloor, requestedStops } = this.state
-    let nextStop = requestedStops[0]
-    if (!nextStop) {
-      requestedStops.push(requestedFloor)
-    } else if (!requestedStops.includes(requestedFloor)) {
-      if (nextStop < currentFloor) {
-        // we're going down
-        let nextStops  = requestedStops.filter( stop => { return stop < currentFloor } )
-        let laterStops = requestedStops.filter( stop => { return stop > currentFloor } )
-        if (requestedFloor < currentFloor) {
-          nextStops.push(requestedFloor)
-        } else {
-          laterStops.push(requestedFloor)
-        }
-        nextStops.sort((a, b) => { return b - a })
-        laterStops.sort((a, b) => { return a - b })
-        requestedStops = nextStops.concat(laterStops)
-        console.log('down - ', 'cf:', currentFloor, 'rf:', requestedStops.join(', '))
-      } else {
-        // we're going up
-        let nextStops  = requestedStops.filter( stop => { return stop > currentFloor } )
-        let laterStops = requestedStops.filter( stop => { return stop < currentFloor } )
-        if (requestedFloor > currentFloor) {
-          nextStops.push(requestedFloor)
-        } else {
-          laterStops.push(requestedFloor)
-        }
-        nextStops.sort((a, b) => { return a - b })
-        laterStops.sort((a, b) => { return b - a })
-        requestedStops = nextStops.concat(laterStops)
-        console.log('up - ', 'cf:', currentFloor, 'rf:', requestedStops.join(', '))
-      }
-
-    }
-    this.setState({ requestedStops })
-  }
-
   componentDidMount() {
     this.floorTravelTimer = setInterval(() => this.goToNextFloor(), 500)
   }
@@ -93,12 +89,11 @@ class App extends Component {
     clearInterval(this.floorStopTimer)
   }
 
-
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to the Virtual Elevator</h1>
+        <header>
+          <h1>Welcome to the Virtual Elevator</h1>
         </header>
         <div>Current Floor is { this.state.currentFloor }</div>
         <div>Requested Stops: { this.state.requestedStops.join(', ') }</div>
