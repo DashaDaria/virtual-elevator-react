@@ -8,4 +8,4 @@ Virtual elevator is a Singe Page App that is built utilizing the React framework
 From your terminal:
 * ```fork git@github.com:DashaDaria/virtual-elevator-react.git & clone locally```
 * ```cd into virtual-elevator-react from your local directory```
-* ```yarn start```
+* ```npm install && npm start```
