@@ -1,3 +1,11 @@
+header {
+    text-align: justify;
+    height: 30px;
+    padding: 5px 30px 40px;
+    background: #0d4995;
+    color: #fff;
+}
+
 body {
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -9,4 +17,67 @@ body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
+  color: white;
+}
+
+.keypad-container {
+  background: transparent;
+  display: inline-block;
+  float: left;
+  height: 500px;
+  width: 200px;
+  margin: 6% 6% 6% 10%;
+}
+
+.keypad input {
+  font-size: 30px;
+  width: 60px;
+  height: 60px;
+  margin: 12px;
+  border-radius: 10%;
+  border: 2px solid white;
+  color: white;
+  background-color: transparent;
+  outline: 0;
+  transition: all 170ms ease-out;
+}
+
+.keypad input:hover, .keypad input.requested {
+  background-color: white;
+  color: #0d4995;
+}
+
+.keypad-container p {
+  text-align: center;
+}
+
+.building-container {
+  background: transparent;
+  display: inline-block;
+  float: left;
+  height: 500px;
+  margin: 1% 2% 1% 1%;
+  width: 47%;
+}
+table {
+  padding: 0% 7% 0% 7%;
+  margin: 5% 40% 0%;
+  border: 2px solid white;
+  border-spacing: 0px 5px;
+  background: transparent;
+}
+
+td {
+  border: 1px solid white;
+  height: 35px;
+  width: 40px;
+  text-align: center;
+  background: transparent;
+  color: white;
+  border-radius: 10%;
+}
+
+td.visited {
+  background: white;
+  color: #0d4995;
 }

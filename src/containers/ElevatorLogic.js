@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../App.css';
+import '../index.css';
 import ElevatorKeypad from './ElevatorKeypad';
 import Elevator from '../components/Elevator';
 
@@ -91,7 +91,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div>
         <header>
           <h1>Welcome to the Virtual Elevator</h1>
         </header>
