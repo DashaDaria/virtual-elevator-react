@@ -22,7 +22,7 @@ elevatorButtonClass  (floorNumber) {
   render(){
     return(
       <div className="keypad-container">
-        <p>Choose Your Floor</p>
+      <p>Where do you want to go?</p>
         <div className="keypad">
           <input type="button" className={ this.elevatorButtonClass (1) } onClick={this.requestStopOnClick} value="1" />
           <input type="button" className={ this.elevatorButtonClass (2) } onClick={this.requestStopOnClick} value="2" />

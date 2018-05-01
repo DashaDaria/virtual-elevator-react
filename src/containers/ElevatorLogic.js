@@ -93,15 +93,20 @@ class App extends Component {
     return (
       <div>
         <header>
-          <h1>Welcome to the Virtual Elevator</h1>
+          <h2>Welcome to the Virtual Elevator</h2>
         </header>
-        <div>Current Floor is { this.state.currentFloor }</div>
-        <div>Requested Stops: { this.state.requestedStops.join(', ') }</div>
-        <ElevatorKeypad
-          requestedStops={this.state.requestedStops}
-          addFloorToRequestedStops={this.addFloorToRequestedStops}
-        />
-        <Elevator currentFloor={this.state.currentFloor} />
+        <div className="content-container">
+          <Elevator currentFloor={this.state.currentFloor} />
+          <div className="current-floor-container">
+            <h3>The elevator is on floor: <br/><br/>
+                <span>{ this.state.currentFloor }</span> </h3>
+          </div>
+          <ElevatorKeypad
+            requestedStops={this.state.requestedStops}
+            addFloorToRequestedStops={this.addFloorToRequestedStops}
+          />
+
+        </div>
       </div>
     )
   }

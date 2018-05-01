@@ -14,8 +14,7 @@ class Elevator extends Component {
   render(){
     return(
       <div className="building-container">
-        <div className="building">
-          <table>
+        <table>
           <tbody>
             <tr>
               <td className={ this.moveElevatorClass(10) }>10</td>
@@ -47,9 +46,8 @@ class Elevator extends Component {
             <tr>
               <td className={ this.moveElevatorClass(1) }>1</td>
             </tr>
-            </tbody>
-          </table>
-          </div>
+          </tbody>
+        </table>
       </div>
     )
   }

@@ -1,7 +1,7 @@
 header {
-    text-align: justify;
-    height: 30px;
-    padding: 5px 30px 40px;
+    text-align: center;
+    height: 50px;
+    padding: 2px 25px 1%;
     background: #0d4995;
     color: #fff;
 }
@@ -14,26 +14,91 @@ body {
   background-image: url("background.png");
   background-repeat: no-repeat;
   background-position: center center;
-  font-family: sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
   color: white;
 }
 
-.keypad-container {
+h3 {
+  color: #0d4995;
+  text-align:center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  margin-top: 10%;
+}
+
+span {
+  font-size: 350%;
+}
+/* HOLDS ALL OF THE COMPONENTS*/
+.content-container {
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 3%;
+}
+/* THE ELEVATOR COMPONENT THAT REPRESENTS THE BUILDING*/
+.building-container {
   background: transparent;
   display: inline-block;
   float: left;
   height: 500px;
-  width: 200px;
-  margin: 6% 6% 6% 10%;
+  margin-right: 1%;
+  width: 44%;
+}
+/* ELEVATOR BUILDING STYLING*/
+table {
+  padding-left: 10%;
+  padding-right: 10%;
+  margin:auto;
+  border: 2px solid white;
+  border-spacing: 30px 10px;
+  background: transparent;
+}
+
+td {
+  border: 1px solid white;
+  height: 35px;
+  width: 35px;
+  text-align: center;
+  background: transparent;
+  color: transparent;
+  border-radius: 10%;
+}
+
+td.visited {
+  background: white;
+  color: #0d4995;
+}
+
+/* A DIV WITHIN THE ELEVATOR LOGIC COMPONENT*/
+.current-floor-container {
+  background: white;
+  opacity: 0.9;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  display: inline-block;
+  float: left;
+  height: 250px;
+  margin-bottom: 1%;
+  width: 54%;
+}
+/* KEYPAD STYLING*/
+.keypad-container {
+  background: transparent;
+  display: inline-block;
+  float: left;
+  height: 250px;
+  width: 54%;
+}
+.keypad {
+  margin-left: 1.5%;
 }
 
 .keypad input {
   font-size: 30px;
-  width: 60px;
-  height: 60px;
-  margin: 12px;
+  width: 75px;
+  height: 75px;
+  margin: 2%;
   border-radius: 10%;
   border: 2px solid white;
   color: white;
@@ -42,42 +107,19 @@ body {
   transition: all 170ms ease-out;
 }
 
-.keypad input:hover, .keypad input.requested {
+.keypad input:hover {
   background-color: white;
   color: #0d4995;
 }
 
-.keypad-container p {
-  text-align: center;
-}
-
-.building-container {
-  background: transparent;
-  display: inline-block;
-  float: left;
-  height: 500px;
-  margin: 1% 2% 1% 1%;
-  width: 47%;
-}
-table {
-  padding: 0% 7% 0% 7%;
-  margin: 5% 40% 0%;
-  border: 2px solid white;
-  border-spacing: 0px 5px;
-  background: transparent;
-}
-
-td {
-  border: 1px solid white;
-  height: 35px;
-  width: 40px;
-  text-align: center;
-  background: transparent;
+.keypad input.requested {
+  background-color: orange;
   color: white;
-  border-radius: 10%;
 }
 
-td.visited {
-  background: white;
-  color: #0d4995;
+p {
+  text-align:center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  margin-top: 2%;
 }
