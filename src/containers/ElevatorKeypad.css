@@ -33,7 +33,7 @@
   color: white;
 }
 
-p {
+.keypad-header {
   text-align:center;
   vertical-align: middle;
   text-transform: uppercase;

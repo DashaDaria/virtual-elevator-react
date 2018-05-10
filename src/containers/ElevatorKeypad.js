@@ -21,7 +21,7 @@ class ElevatorKeypad extends Component {
   render() {
     return(
       <div className="keypad-container">
-      <p>Where do you want to go?</p>
+      <p className="keypad-header">Where do you want to go?</p>
         <div className="keypad">
         {this.props.values.map(value => {
           return(
