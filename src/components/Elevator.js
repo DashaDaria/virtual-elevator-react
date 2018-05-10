@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/index.css';
+import './Elevator.css';
 
 class Elevator extends Component {
   constructor(){
@@ -14,8 +14,8 @@ class Elevator extends Component {
   render(){
     return(
       <div className="building-container">
-        <table>
-          <tbody>
+        <table className="building">
+          <tbody className="building-floor">
             {this.props.floors.map(floor => {
             return(
               <tr>

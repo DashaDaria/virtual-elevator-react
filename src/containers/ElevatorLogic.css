@@ -1,0 +1,39 @@
+.elevator-intro {
+    text-align: left;
+    height: 50px;
+    padding: 2px 40px 1%;
+    background: #0d4995;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+/* HOLDS ALL OF THE COMPONENTS*/
+.content-container {
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 3%;
+}
+
+/* A DIV WITHIN THE ELEVATOR LOGIC COMPONENT*/
+.current-floor-container {
+  background: white;
+  opacity: 0.9;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  display: inline-block;
+  float: left;
+  height: 250px;
+  margin-bottom: 1%;
+  width: 54%;
+}
+
+.elevator-floor {
+  color: #0d4995;
+  text-align:center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  margin-top: 10%;
+}
+
+.floor-size {
+  font-size: 350%;
+}

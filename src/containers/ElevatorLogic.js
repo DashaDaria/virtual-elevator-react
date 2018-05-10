@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ElevatorKeypad from './ElevatorKeypad';
 import Elevator from '../components/Elevator';
-import '../styles/index.css';
+import './ElevatorLogic.css';
 
 class ElevatorLogic extends Component {
   constructor(){
@@ -92,14 +92,14 @@ class ElevatorLogic extends Component {
   render() {
     return (
       <div>
-        <header>
+        <header className="elevator-intro">
           <h2>Welcome to the Virtual Elevator</h2>
         </header>
         <div className="content-container">
           <Elevator currentFloor={this.state.currentFloor} />
           <div className="current-floor-container">
-            <h3>The elevator is on floor: <br/><br/>
-            <span>{ this.state.currentFloor }</span></h3>
+            <h3 className="elevator-floor">The elevator is on floor: <br/><br/>
+            <span className="floor-size">{ this.state.currentFloor }</span></h3>
           </div>
           <ElevatorKeypad
             requestedStops={this.state.requestedStops}

@@ -1,0 +1,33 @@
+/* THE ELEVATOR COMPONENT THAT REPRESENTS THE BUILDING*/
+.building-container {
+  background: transparent;
+  display: inline-block;
+  float: left;
+  height: 500px;
+  margin-right: 1%;
+  width: 44%;
+}
+/* ELEVATOR BUILDING STYLING*/
+.building {
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-left: 4%;
+  border: 2px solid white;
+  border-spacing: 55px 10px;
+  background: transparent;
+}
+
+.building-floor td {
+  border: 1px solid white;
+  height: 35px;
+  width: 35px;
+  text-align: center;
+  background: transparent;
+  color: transparent;
+  border-radius: 10%;
+}
+
+.building-floor td.visited {
+  background: white;
+  color: #0d4995;
+}

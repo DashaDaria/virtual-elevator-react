@@ -1,0 +1,40 @@
+/* KEYPAD STYLING*/
+.keypad-container {
+  background: transparent;
+  display: inline-block;
+  float: left;
+  height: 250px;
+  width: 54%;
+}
+.keypad {
+  margin-left: 1.5%;
+}
+
+.keypad input {
+  font-size: 30px;
+  width: 75px;
+  height: 75px;
+  margin: 2%;
+  border-radius: 10%;
+  border: 2px solid white;
+  color: white;
+  background-color: transparent;
+  outline: 0;
+  transition: all 170ms ease-out;
+}
+
+.keypad input:hover {
+  background-color: white;
+  color: #0d4995;
+}
+
+.keypad input.requested {
+  background-color: orange;
+  color: white;
+}
+
+p {
+  text-align:center;
+  vertical-align: middle;
+  text-transform: uppercase;
+}

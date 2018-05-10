@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../styles/index.css';
+import './ElevatorKeypad.css'
 
 class ElevatorKeypad extends Component {
   constructor() {
