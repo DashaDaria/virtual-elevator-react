@@ -22,26 +22,25 @@ class ElevatorKeypad extends Component {
     return(
       <div className="keypad-container">
       <p>Where do you want to go?</p>
-
         <div className="keypad">
         {this.props.values.map(value => {
           return(
-          <input type="button"
-          className={ this.elevatorButtonClass(value) }
-          onClick={ this.requestStopOnClick }
-          key={value}
-          value={value}
-           />)
-        })
-      }
+            <input type="button"
+            className={ this.elevatorButtonClass(value) }
+            onClick={ this.requestStopOnClick }
+            key={value}
+            value={value}
+            />)
+            })
+          }
+        </div>
       </div>
-    </div>
-    )
+      )
+    }
   }
-}
 
-ElevatorKeypad.defaultProps = {
-  values: [1,2,3,4,5,6,7,8,9,10]
-};
+  ElevatorKeypad.defaultProps = {
+    values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    };
 
 export default ElevatorKeypad;

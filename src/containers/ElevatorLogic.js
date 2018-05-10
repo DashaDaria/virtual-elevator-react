@@ -108,7 +108,7 @@ class ElevatorLogic extends Component {
         </div>
       </div>
     )
+   }
   }
-}
 
 export default ElevatorLogic;

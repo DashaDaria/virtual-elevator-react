@@ -11,48 +11,28 @@ class Elevator extends Component {
     return (this.props.currentFloor === currentFloor) ? 'visited' : ''
   }
 
-  
-
   render(){
     return(
       <div className="building-container">
         <table>
           <tbody>
-            <tr>
-              <td className={ this.moveElevatorClass(10) }>10</td>
-            </tr>
-            <tr>
-              <td className={ this.moveElevatorClass(9) }>9</td>
-            </tr>
-            <tr>
-              <td className={ this.moveElevatorClass(8) }>8</td>
-            </tr>
-            <tr>
-              <td className={ this.moveElevatorClass(7) }>7</td>
-            </tr>
-            <tr>
-              <td className={ this.moveElevatorClass(6) }>6</td>
-            </tr>
-            <tr>
-              <td className={ this.moveElevatorClass(5) }>5</td>
-            </tr>
-            <tr>
-              <td className={ this.moveElevatorClass(4) }>4</td>
-            </tr>
-            <tr>
-              <td className={ this.moveElevatorClass(3) }>3</td>
-            </tr>
-            <tr>
-              <td className={ this.moveElevatorClass(2) }>2</td>
-            </tr>
-            <tr>
-              <td className={ this.moveElevatorClass(1) }>1</td>
-            </tr>
+            {this.props.floors.map(floor => {
+            return(
+              <tr>
+                <td key={floor} className={ this.moveElevatorClass(floor) }>{floor}</td>
+              </tr>
+              )
+              })
+             }
           </tbody>
         </table>
       </div>
-    )
+     )
+    }
   }
-}
+
+Elevator.defaultProps = {
+  floors: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+  };
 
 export default Elevator;
