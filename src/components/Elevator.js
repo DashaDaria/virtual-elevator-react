@@ -11,6 +11,8 @@ class Elevator extends Component {
     return (this.props.currentFloor === currentFloor) ? 'visited' : ''
   }
 
+  
+
   render(){
     return(
       <div className="building-container">
